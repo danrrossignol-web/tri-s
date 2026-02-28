@@ -1,253 +1,131 @@
-/* --- Basic Reset --- */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* --- Brand Colors --- */
+:root {
+    --tris-blue: #004085;
+    --tris-green: #2e7d32; /* Modern version of their original green */
+    --tris-light-bg: #f4f7f6;
+    --text-dark: #333;
 }
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for a clean look */
+    color: var(--text-dark);
+    background-color: var(--tris-light-bg);
 }
 
-h1, h2, h3 {
-    margin-top: 0;
-}
-
-ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* --- Layout --- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-section {
-    padding: 60px 0;
+/* --- Header & Navigation --- */
+.top-bar {
+    background-color: var(--tris-blue);
+    color: white;
+    padding: 8px 0;
+    font-size: 0.9rem;
 }
 
-/* --- Components --- */
-
-/* Modern Header Style */
-.main-header {
-    background-color: #fff;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.main-header .container {
+.top-bar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main-header .logo img {
-    height: 60px; /* Adjust as needed for their actual logo */
+.phone-link {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.phone-link:hover {
+    color: #ffc107; /* Highlight on hover */
+}
+
+.nav-area {
+    background: white;
+    padding: 15px 0;
+    border-bottom: 4px solid var(--tris-green); /* Incorporating the Green */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-area .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 70px; /* Sized for the 400x120px recommended logo */
     width: auto;
 }
 
 .main-nav ul {
     display: flex;
-    gap: 30px;
+    gap: 25px;
+    list-style: none;
 }
 
 .main-nav a {
-    font-weight: bold;
-    color: #007bff; /* Professional blue from their old site */
+    color: var(--tris-blue);
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 5px 0;
 }
 
-.main-nav a.active {
-    color: #004085; /* Darker blue for active link */
-    border-bottom-color: #007bff;
+.main-nav a:hover, .main-nav a.active {
+    color: var(--tris-green);
 }
 
-.main-nav a:hover {
-    color: #004085;
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
 }
 
-/* Modern Footer Style */
+.btn-primary {
+    background-color: var(--tris-green);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e5621;
+    transform: translateY(-2px);
+}
+
+/* --- Footer --- */
 .main-footer {
-    background-color: #343a40; /* Dark, professional footer */
-    color: #fff;
-    padding: 40px 0 20px;
-    margin-top: 60px;
+    background-color: #222;
+    color: #eee;
+    padding: 60px 0 20px;
 }
 
 .footer-sections {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
 }
 
 .footer-sections h3 {
-    color: #fff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 10px;
+    color: white;
+    border-left: 4px solid var(--tris-green);
+    padding-left: 15px;
     margin-bottom: 20px;
-    font-size: 1.2rem;
-}
-
-.footer-contact p, .footer-links a, .footer-affiliate p {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-    color: #007bff;
 }
 
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid #444;
     padding-top: 20px;
-    font-size: 0.85rem;
-    color: #aaa;
-}
-
-/* --- Common UI Elements --- */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.btn-primary {
-    background-color: #28a745; /* Success Green */
-}
-
-.btn-primary:hover {
-    background-color: #218838;
-}
-
-.btn-call {
-    background-color: #fff;
-    color: #007bff;
-    border: 2px solid #007bff;
-}
-
-.btn-call:hover {
-    background-color: #e2f0ff;
-}
-
-/* --- Page Specific Styles --- */
-
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    padding-bottom: 40px;
-}
-
-.hero-section h1 {
-    font-size: 2.5rem;
-    color: #004085;
-    margin-bottom: 15px;
-}
-
-.hero-section p {
-    font-size: 1.1rem;
-    color: #666;
-}
-
-.main-image-placeholder {
-    max-width: 800px;
-    margin: 40px auto;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* Services Grid */
-.services-overview h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    color: #004085;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.service-card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    text-align: center;
-    border: 1px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    border-color: #007bff;
-}
-
-.service-card img {
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.service-card h3 {
-    color: #004085;
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-}
-
-/* Call to Action */
-.call-to-action {
-    background-color: #fff;
-    text-align: center;
-    padding: 80px 0;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.call-to-action h2 {
-    color: #004085;
-    margin-bottom: 15px;
-}
-
-.call-to-action p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.call-to-action .btn {
-    margin: 10px;
+    font-size: 0.8rem;
 }
