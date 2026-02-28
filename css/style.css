@@ -1,131 +1,98 @@
-/* --- Brand Colors --- */
+/* --- TRI-S BRAND VARIABLES --- */
 :root {
     --tris-blue: #004085;
-    --tris-green: #2e7d32; /* Modern version of their original green */
-    --tris-light-bg: #f4f7f6;
-    --text-dark: #333;
+    --tris-green: #2e7d32;
+    --tris-light-bg: #f8f9fa;
+    --tris-dark: #222;
+    --white: #ffffff;
 }
 
+/* --- GLOBAL STYLES --- */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--tris-light-bg);
+    color: #333;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 
-/* --- Header & Navigation --- */
-.top-bar {
-    background-color: var(--tris-blue);
-    color: white;
-    padding: 8px 0;
-    font-size: 0.9rem;
-}
+a { color: var(--tris-blue); text-decoration: none; transition: 0.3s; }
+a:hover { color: var(--tris-green); text-decoration: underline; }
 
-.top-bar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.phone-link {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.phone-link:hover {
-    color: #ffc107; /* Highlight on hover */
-}
-
-.nav-area {
-    background: white;
-    padding: 15px 0;
-    border-bottom: 4px solid var(--tris-green); /* Incorporating the Green */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.nav-area .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 70px; /* Sized for the 400x120px recommended logo */
-    width: auto;
-}
-
-.main-nav ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
-
-.main-nav a {
-    color: var(--tris-blue);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.95rem;
-    text-decoration: none;
-    padding: 5px 0;
-}
-
-.main-nav a:hover, .main-nav a.active {
-    color: var(--tris-green);
-}
-
-/* --- Buttons --- */
-.btn {
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: 800; }
+.section-header {
+    border-bottom: 3px solid var(--tris-green);
     display: inline-block;
-    padding: 12px 25px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-.btn-primary {
-    background-color: var(--tris-green);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #1e5621;
-    transform: translateY(-2px);
-}
-
-/* --- Footer --- */
-.main-footer {
-    background-color: #222;
-    color: #eee;
-    padding: 60px 0 20px;
-}
-
-.footer-sections {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-sections h3 {
-    color: white;
-    border-left: 4px solid var(--tris-green);
-    padding-left: 15px;
-    margin-bottom: 20px;
-}
-
-.footer-bottom {
+/* --- HERO BANNER --- */
+.hero-banner {
+    position: relative;
+    padding: 100px 0;
+    color: var(--white);
     text-align: center;
-    border-top: 1px solid #444;
-    padding-top: 20px;
-    font-size: 0.8rem;
+    background: linear-gradient(rgba(0, 64, 133, 0.7), rgba(0, 64, 133, 0.7)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+}
+
+.hero-banner h1 { color: var(--white); font-size: clamp(24px, 5vw, 48px); margin-bottom: 20px; }
+.hero-banner p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 30px; }
+
+/* --- BUTTONS --- */
+.btn-tris {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.btn-green { background: var(--tris-green); color: var(--white) !important; }
+.btn-green:hover { background: #1e5621; transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white) !important; }
+.btn-outline:hover { background: var(--white); color: var(--tris-blue) !important; }
+
+/* --- TRUST BAR --- */
+.trust-bar { background: var(--tris-blue); color: var(--white); padding: 15px 0; }
+.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 20px; }
+.trust-item strong { display: block; font-size: 1.1rem; }
+
+/* --- SERVICES CARDS --- */
+.services-section { padding: 60px 0; background: var(--tris-light-bg); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.service-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    transition: 0.3s;
+    text-align: center;
+}
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--tris-green); }
+
+/* --- GALLERY --- */
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.gallery-img { width: 100%; height: 250px; object-fit: cover; display: block; filter: grayscale(20%); transition: 0.3s; }
+.gallery-img:hover { filter: grayscale(0%); }
+
+/* --- FOOTER --- */
+.main-footer { background: var(--tris-dark); color: #ccc; padding: 60px 0 20px; border-top: 5px solid var(--tris-green); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.footer-h4 { color: var(--white); border-bottom: 2px solid var(--tris-green); padding-bottom: 10px; margin-bottom: 20px; }
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #444; font-size: 0.85rem; }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-banner { padding: 60px 0; }
 }
