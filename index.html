@@ -91,29 +91,7 @@
 </head>
 <body>
 
-    <div class="announcement-bar">
-        <div class="container">
-            Contact Us at (860) 875-2110 | Ellington, CT
-        </div>
-    </div>
-
-    <header class="main-header">
-        <div class="container header-flex">
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="images/tri-s-environmental-logo.png" alt="TRI-S Environmental Logo">
-                </a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <section class="hero-banner">
         <div class="container">
@@ -131,7 +109,7 @@
             <div class="trust-grid">
                 <div class="trust-item"><strong>$4,000,000+</strong>BONDING CAPACITY</div>
                 <div class="trust-item"><strong>OSHA HAZWOPER</strong>CERTIFIED TEAMS</div>
-                <div class="trust-item)<strong>EPA LEAD-SAFE</strong>CERTIFIED FIRM</div>
+                <div class="trust-item"><strong>EPA LEAD-SAFE</strong>CERTIFIED FIRM</div>
                 <div class="trust-item"><strong>LICENSED & INSURED</strong>NE CONTRACTOR</div>
             </div>
         </div>
@@ -166,9 +144,7 @@
                     <h2 class="section-header">About TRI-S Environmental Services</h2>
                     <p><strong>Privately Owned & Operated Since 1999.</strong></p>
                     <p>For over 25 years, TRI-S Environmental Services, Inc. has been a leader in high-stakes environmental management across New England. We are not simply waste haulers; we are compliance partners dedicated to protecting our clients from liability through rigorous safety standards and expert execution.</p>
-
                     <p>Our team specializes in complex industrial projects, from large-scale site remediations to delicate lab-pack services. As a fully <strong>licensed, bonded, and insured</strong> corporation, we possess the bonding capacity (up to $4 million) and technical credentials required for high-security municipal and industrial work. We perform hundreds of projects per year, varying in size up to $4,000,000 for a single project.</p>
-
                     <h3>The TRI-S Advantage</h3>
                     <ul class="list-checks">
                         <li><strong>Professional Workforce:</strong> Every technician is OSHA Hazwoper trained—no unskilled labor is ever used on our sites.</li>
@@ -179,7 +155,7 @@
                 </div>
                 <div style="flex: 1; min-width: 300px;">
                     <div style="border: 1px solid #ddd; padding: 10px; background: #fff; border-radius: 8px; margin-bottom: 30px;">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m12!1m3!1d2970.6277977468165!2d-72.46640868455891!3d41.91266397921946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6f8516104f93b%3A0x6b777a8b1912a762!2s25%20Pinney%20St%2C%20Ellington%2C%20CT%2006029!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.0475373802375!2d-72.46679502344716!3d41.91330366318353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6f9828d171d37%3A0x88f28d7d9959f632!2s25%20Pinney%20St%2C%20Ellington%2C%20CT%2006029!5e0!3m2!1sen!2sus!4v1710000000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                     <div style="background: var(--tris-light-bg); padding: 30px; border-radius: 8px; text-align: center; border: 1px solid #eee;">
                         <h3 style="margin-top: 0;">Our Location</h3>
@@ -239,36 +215,18 @@
         </div>
     </section>
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h4 class="footer-h4">TRI-S Environmental</h4>
-                    <p>25 Pinney St, Ellington, CT 06029<br>Tel: (860) 875-2110</p>
-                </div>
-                <div>
-                    <h4 class="footer-h4">Quick Links</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="services.html" style="color: #ccc;">Environmental Services</a></li>
-                        <li><a href="about.html" style="color: #ccc;">About Our Company</a></li>
-                        <li><a href="contact.html" style="color: #ccc;">Contact & Quotes</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-h4">Compliance</h4>
-                    <p style="font-size: 0.9rem;">
-                        EPA & DEEP Regulated<br>
-                        OSHA Hazwoper Trained<br>
-                        Bonded up to $4 Million
-                    </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 TRI-S Environmental Services, Inc. | All Rights Reserved.</p>
-                <p>This site is designed, maintained, and hosted by <a href="https://www.rivereastbusiness.com/" target="_blank" style="color: #ffffff; text-decoration: underline;">River East Business, Inc.</a></p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script>
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                });
+        }
+        loadComponent('header-placeholder', 'header-component.html');
+        loadComponent('footer-placeholder', 'footer-component.html');
+    </script>
 </body>
 </html>
