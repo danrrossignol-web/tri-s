@@ -173,10 +173,69 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white) !important; }
 .btn-outline:hover { background: var(--white); color: var(--tris-blue) !important; }
 
-/* --- TRUST BAR --- */
-.trust-bar { background: var(--tris-blue); color: var(--white); padding: 25px 0; }
-.trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 20px; }
-.trust-item strong { display: block; font-size: 1.25rem; color: var(--tris-green); margin-bottom: 5px; }
+/* --- UPDATED TRUST BAR WITH GRADIENT & CTA --- */
+.trust-bar { 
+    background: linear-gradient(to right, #003366, var(--tris-blue)); /* Subtle gradient depth */
+    color: var(--white); 
+    padding: 20px 0; 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.trust-grid { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.trust-item {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.trust-item:last-of-type {
+    border-right: none;
+}
+
+.trust-item strong { 
+    display: block; 
+    font-size: 1.1rem; 
+    color: #4ade80; /* Brighter, high-contrast green for readability */
+    margin-bottom: 3px; 
+    text-transform: uppercase;
+}
+
+/* Trust Bar Contact Section */
+.trust-cta {
+    flex: 1.5;
+    text-align: center;
+    padding-left: 20px;
+}
+
+.trust-phone {
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.trust-phone i {
+    margin-right: 8px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .trust-grid { flex-direction: column; }
+    .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
+    .trust-cta { padding-left: 0; padding-top: 15px; }
+}
 
 /* --- SERVICES & CARDS --- */
 .services-section { padding: 80px 0; background: var(--tris-light-bg); }
