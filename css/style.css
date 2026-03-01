@@ -297,3 +297,58 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
     .hero-banner h1 { font-size: 30px; }
     .trust-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* --- COMPACT SERVICES SECTION --- */
+.services-section-compact {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.compact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns reduces vertical height */
+    gap: 20px;
+}
+
+.compact-card {
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+    background: var(--tris-light-bg);
+    border-top: 3px solid var(--tris-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.compact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    border-top-color: var(--tris-green);
+    background: #fff;
+}
+
+.compact-card h3 {
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    color: var(--tris-blue);
+    min-height: 40px; /* Keeps headings aligned */
+    display: flex;
+    align-items: center;
+}
+
+.compact-card p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+}
+
+/* Mobile: 1 Column, Tablet: 2 Columns */
+@media (max-width: 992px) {
+    .compact-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 576px) {
+    .compact-grid { grid-template-columns: 1fr; }
+}
