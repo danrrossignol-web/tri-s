@@ -190,24 +190,21 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 }
 
 .trust-item {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    border-right: 1px solid rgba(255,255,255,0.2);
-    padding: 10px;
-    font-size: 13px;
-    line-height: 1.4;
+    transition: transform 0.3s ease;
 }
 
-.trust-item:last-of-type {
-    border-right: none;
+.trust-item:hover {
+    transform: translateY(-5px); /* Subtle lift effect */
 }
 
-.trust-item strong { 
-    display: block; 
-    font-size: 1.1rem; 
-    color: #4ade80; /* Brighter, high-contrast green for readability */
-    margin-bottom: 3px; 
-    text-transform: uppercase;
+.trust-item strong {
+    font-size: 1.4rem;
+    color: #4ade80; /* Your TRI-S Green */
+    display: block;
 }
 
 /* Trust Bar Contact Section */
