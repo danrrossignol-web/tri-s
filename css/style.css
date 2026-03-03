@@ -150,54 +150,75 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 
 /* --- REFINED TRUST BAR (2026 EDITION) --- */
 .trust-bar { 
-    background: linear-gradient(to right, #002b55, #004085); /* Darker, sleek professional gradient */
+    background: linear-gradient(to right, #002b55, #004085); 
     color: var(--white); 
-    padding: 25px 0; /* Slimmer profile */
+    padding: 15px 0; /* Very slim profile */
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .trust-grid { 
     display: flex; 
     align-items: center; 
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .trust-item {
     flex: 1;
     text-align: center;
     position: relative;
-    padding: 10px 15px;
-    transition: transform 0.3s ease;
+    padding: 5px 10px; /* Tight spacing */
 }
 
-.trust-item:hover { transform: translateY(-3px); }
-
-/* Vertical Divider Logic */
+/* White Vertical Dividers */
 .trust-item:not(:last-child)::after {
     content: "";
     position: absolute;
     right: 0;
-    top: 20%;
-    height: 60%;
+    top: 15%;
+    height: 70%;
     width: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.4); /* Clear white divider */
 }
 
 .trust-item strong {
     display: block;
-    font-size: 1.1rem; /* Shrunken for professionalism */
-    color: var(--tris-accent-green);
+    font-size: 0.95rem; /* Shrunken significantly */
+    color: #4ade80; /* TRI-S Accent Green */
     letter-spacing: 0.5px;
-    margin-bottom: 2px;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .trust-item span {
     display: block;
-    font-size: 0.75rem; /* Smaller sub-text */
+    font-size: 0.65rem; /* Micro-text for sub-label */
     text-transform: uppercase;
-    opacity: 0.9;
+    opacity: 0.8;
     font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Mobile: 2 Columns, Neatly Stacked */
+@media (max-width: 768px) {
+    .trust-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two clear columns */
+        gap: 10px 0;
+    }
+    
+    .trust-item {
+        padding: 10px 5px;
+    }
+
+    /* Remove dividers on mobile to keep it clean */
+    .trust-item:after {
+        display: none !important;
+    }
+    
+    /* Add a subtle border to separate the 2x2 grid if desired */
+    .trust-item:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
 
 /* --- COMPACT SERVICES SECTION --- */
