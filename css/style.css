@@ -296,3 +296,25 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
     .trust-item { flex: 0 0 100%; }
 }
 
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #002b55;
+    color: white;
+    padding: 20px;
+    display: none; /* Hidden by default, shown via JS */
+    z-index: 9999;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.cookie-btn {
+    padding: 8px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+.accept-btn { background: #4ade80; color: #000; }
+.reject-btn { background: transparent; color: #fff; border: 1px solid #fff; }
