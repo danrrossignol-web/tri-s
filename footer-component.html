@@ -27,4 +27,23 @@
             <p>This site is designed, maintained, and hosted by <a href="https://www.rivereastbusiness.com/" target="_blank" style="color: #ffffff; text-decoration: underline;">River East Business, Inc.</a></p>
         </div>
     </div>
+    <div id="cookie-banner">
+    <span>We use cookies to ensure you get the best experience on our website.</span>
+    <button class="cookie-btn reject-btn" onclick="handleConsent('rejected')">Reject</button>
+    <button class="cookie-btn accept-btn" onclick="handleConsent('accepted')">Accept</button>
+</div>
+
+<script>
+    if (!localStorage.getItem('cookie-consent')) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+        document.getElementById('cookie-banner').style.justifyContent = 'space-between';
+        document.getElementById('cookie-banner').style.alignItems = 'center';
+    }
+
+    function handleConsent(status) {
+        localStorage.setItem('cookie-consent', status);
+        document.getElementById('cookie-banner').style.display = 'none';
+        // Logic to disable Google Analytics would go here if status === 'rejected'
+    }
+</script>
 </footer>
