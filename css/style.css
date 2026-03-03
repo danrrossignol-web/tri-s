@@ -5,11 +5,12 @@
     --tris-light-bg: #f8f9fa;
     --tris-dark: #222;
     --white: #ffffff;
+    --tris-accent-green: #4ade80; /* Brighter green for UI highlights */
 }
 
 /* --- GLOBAL STYLES --- */
 body {
-    font-family: Arial, sans-serif; /* Modern, clean Arial stack */
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     margin: 0;
@@ -39,9 +40,7 @@ body {
     transition: 0.3s;
 }
 
-.announcement-bar a:hover {
-    color: #cccccc;
-}
+.announcement-bar a:hover { color: #cccccc; }
 
 .main-header {
     background: var(--white);
@@ -56,14 +55,12 @@ body {
     align-items: center;
 }
 
-/* Logo sizing as requested */
 .logo-container img {
     height: 85px; 
     width: auto;
     display: block;
 }
 
-/* --- MENU & DROPDOWN LOGIC --- */
 .main-nav ul.nav-menu {
     list-style: none;
     padding: 0;
@@ -82,15 +79,10 @@ body {
     transition: 0.3s;
 }
 
-.main-nav ul.nav-menu li a:hover {
-    color: var(--tris-green);
-}
+.main-nav ul.nav-menu li a:hover { color: var(--tris-green); }
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
+/* Dropdown Logic */
+.dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     display: none;
     position: absolute;
@@ -104,10 +96,7 @@ body {
     border-top: 3px solid var(--tris-green);
 }
 
-.dropdown-content li {
-    border-bottom: 1px solid #eee;
-}
-
+.dropdown-content li { border-bottom: 1px solid #eee; }
 .dropdown-content li a {
     color: #333 !important;
     padding: 12px 16px;
@@ -117,24 +106,12 @@ body {
     text-transform: none !important;
 }
 
-.dropdown-content li a:hover {
-    background-color: #f8f9fa;
-    color: var(--tris-green) !important;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropbtn:after {
-    content: ' ▼';
-    font-size: 9px;
-    vertical-align: middle;
-}
+.dropdown-content li a:hover { background-color: #f8f9fa; color: var(--tris-green) !important; }
+.dropdown:hover .dropdown-content { display: block; }
+.dropbtn:after { content: ' ▼'; font-size: 9px; vertical-align: middle; }
 
 /* --- TYPOGRAPHY & SECTIONS --- */
 h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bold; }
-
 .section-header {
     border-bottom: 4px solid var(--tris-green);
     display: inline-block;
@@ -142,18 +119,16 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
     margin-bottom: 30px;
 }
 
-/* --- HERO BANNER UPDATED --- */
+/* --- HERO BANNER --- */
 .hero-banner {
-    padding: 160px 0; /* Adjusted padding to better fit a 1000px tall image */
+    padding: 160px 0;
     color: var(--white);
     text-align: center;
-    /* Updated with your specific filename */
     background: linear-gradient(rgba(0, 64, 133, 0.6), rgba(0, 64, 133, 0.6)), 
                 url('../images/tri-s-home-page-hero.jpg') no-repeat center center;
-    background-size: cover; /* Ensures the image fills the width regardless of screen size */
+    background-size: cover;
     width: 100%;
 }
-
 .hero-banner h1 { color: var(--white); font-size: clamp(28px, 5vw, 44px); margin-bottom: 20px; }
 .hero-banner p { font-size: 1.25rem; max-width: 850px; margin: 0 auto 40px; font-weight: normal; }
 
@@ -173,79 +148,88 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white) !important; }
 .btn-outline:hover { background: var(--white); color: var(--tris-blue) !important; }
 
-/* --- UPDATED TRUST BAR WITH GRADIENT & CTA --- */
+/* --- REFINED TRUST BAR (2026 EDITION) --- */
 .trust-bar { 
-    background: linear-gradient(to right, #003366, var(--tris-blue)); /* Subtle gradient depth */
+    background: linear-gradient(to right, #002b55, #004085); /* Darker, sleek professional gradient */
     color: var(--white); 
-    padding: 20px 0; 
+    padding: 25px 0; /* Slimmer profile */
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .trust-grid { 
     display: flex; 
     align-items: center; 
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 15px;
 }
 
 .trust-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 1;
     text-align: center;
+    position: relative;
+    padding: 10px 15px;
     transition: transform 0.3s ease;
 }
 
-.trust-item:hover {
-    transform: translateY(-5px); /* Subtle lift effect */
+.trust-item:hover { transform: translateY(-3px); }
+
+/* Vertical Divider Logic */
+.trust-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .trust-item strong {
-    font-size: 1.4rem;
-    color: #4ade80; /* Your TRI-S Green */
     display: block;
+    font-size: 1.1rem; /* Shrunken for professionalism */
+    color: var(--tris-accent-green);
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
 }
 
-/* Trust Bar Contact Section */
-.trust-cta {
-    flex: 1.5;
-    text-align: center;
-    padding-left: 20px;
-}
-
-.trust-phone {
-    color: var(--white);
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-decoration: none;
+.trust-item span {
     display: block;
-    margin-bottom: 8px;
+    font-size: 0.75rem; /* Smaller sub-text */
+    text-transform: uppercase;
+    opacity: 0.9;
+    font-weight: 600;
 }
 
-.trust-phone i {
-    margin-right: 8px;
+/* --- COMPACT SERVICES SECTION --- */
+.services-section-compact { padding: 60px 0; background: #ffffff; }
+.compact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.compact-card {
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+    background: var(--tris-light-bg);
+    border-top: 3px solid var(--tris-blue);
 }
+.compact-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top-color: var(--tris-green); background: #fff; }
+.compact-card h3 { font-size: 15px; margin: 0 0 10px 0; min-height: 40px; display: flex; align-items: center; }
+.compact-card p { font-size: 13px; color: #555; margin: 0; }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .trust-grid { flex-direction: column; }
-    .trust-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); width: 100%; }
-    .trust-cta { padding-left: 0; padding-top: 15px; }
-}
-
-/* --- SERVICES & CARDS --- */
-.services-section { padding: 80px 0; background: var(--tris-light-bg); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.service-card {
-    background: var(--white);
-    border: 1px solid #ddd;
+/* --- HOME DESCRIPTIVE SERVICES (Z-PATTERN) --- */
+.home-services-descriptive { padding: 80px 0; background-color: #ffffff; }
+.tris-row { display: flex; align-items: center; margin-bottom: 80px; flex-wrap: wrap; }
+.tris-row-reverse { flex-direction: row-reverse; }
+.tris-col { flex: 1; min-width: 300px; padding: 0 30px; }
+.tris-service-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
     border-radius: 8px;
-    padding: 40px 30px;
-    transition: 0.3s;
-    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--tris-green); }
+.tris-service-content h3 { font-size: 1.5rem; margin-top: 0; }
+.tris-service-content p { line-height: 1.8; color: #444; }
+.tris-link { color: var(--tris-accent-green); font-weight: bold; text-decoration: none; }
 
 /* --- CITY GRID --- */
 .city-item {
@@ -261,149 +245,32 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 
 /* --- LISTS --- */
 .list-checks { list-style: none; padding: 0; }
-.list-checks li { margin-bottom: 15px; font-weight: normal; font-size: 1.05rem; position: relative; padding-left: 25px; }
-.list-checks li:before { 
-    content: "\2713"; 
-    color: var(--tris-green); 
-    font-weight: bold; 
-    position: absolute;
-    left: 0;
-}
+.list-checks li { margin-bottom: 15px; position: relative; padding-left: 25px; }
+.list-checks li:before { content: "\2713"; color: var(--tris-green); font-weight: bold; position: absolute; left: 0; }
 
 /* --- FOOTER --- */
 .main-footer { background: var(--tris-dark); color: #ccc; padding: 70px 0 0; border-top: 6px solid var(--tris-green); }
 .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; padding-bottom: 50px; }
 .footer-h4 { color: var(--white); border-bottom: 2px solid var(--tris-green); padding-bottom: 10px; margin-bottom: 25px; }
-.footer-bottom { 
-    text-align: center; 
-    padding: 25px 0; 
-    background: rgba(0,0,0,0.3);
-    font-size: 13px; 
-}
-.footer-bottom p { margin: 5px 0; }
+.footer-bottom { text-align: center; padding: 25px 0; background: rgba(0,0,0,0.3); font-size: 13px; }
 
-/* --- MOBILE --- */
+/* --- MOBILE & RESPONSIVE --- */
 @media (max-width: 992px) {
     .header-flex { flex-direction: column; gap: 20px; text-align: center; }
     .main-nav ul.nav-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .logo-container img { height: 70px; margin: 0 auto; }
-}
-
-@media (max-width: 768px) {
-    .hero-banner { padding: 70px 0; }
-    .hero-banner h1 { font-size: 30px; }
-    .trust-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* --- COMPACT SERVICES SECTION --- */
-.services-section-compact {
-    padding: 60px 0;
-    background: #ffffff;
-}
-
-.compact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns reduces vertical height */
-    gap: 20px;
-}
-
-.compact-card {
-    border: 1px solid #e1e1e1;
-    padding: 20px;
-    text-align: left;
-    transition: all 0.3s ease;
-    background: var(--tris-light-bg);
-    border-top: 3px solid var(--tris-blue);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.compact-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    border-top-color: var(--tris-green);
-    background: #fff;
-}
-
-.compact-card h3 {
-    font-size: 15px;
-    margin: 0 0 10px 0;
-    color: var(--tris-blue);
-    min-height: 40px; /* Keeps headings aligned */
-    display: flex;
-    align-items: center;
-}
-
-.compact-card p {
-    font-size: 13px;
-    line-height: 1.5;
-    color: #555;
-    margin: 0;
-}
-
-/* Mobile: 1 Column, Tablet: 2 Columns */
-@media (max-width: 992px) {
     .compact-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+@media (max-width: 768px) {
+    .hero-banner { padding: 80px 0; }
+    .hero-banner h1 { font-size: 30px; }
+    .trust-item { flex: 0 0 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .trust-item:after { display: none; } /* Remove dividers on mobile */
+    .tris-row { margin-bottom: 40px; }
+    .tris-service-img { height: 280px; }
+}
+
 @media (max-width: 576px) {
     .compact-grid { grid-template-columns: 1fr; }
-}
-
-
-/* --- Home Descriptive Services Section --- */
-.home-services-descriptive {
-    padding: 80px 0;
-    background-color: #ffffff;
-}
-
-.tris-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 60px;
-    flex-wrap: wrap; /* Allows stacking on mobile */
-}
-
-/* This creates the middle row "Text-Left, Image-Right" flip */
-.tris-row-reverse {
-    flex-direction: row-reverse;
-}
-
-.tris-col {
-    flex: 1;
-    min-width: 300px;
-    padding: 0 20px;
-}
-
-.tris-service-img {
-    width: 100%;
-    height: 400px; /* Uniform height for all images */
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-.tris-service-content h3 {
-    color: #003366; /* TRI-S Blue */
-    text-transform: uppercase;
-    margin-top: 0;
-    font-size: 1.5rem;
-}
-
-.tris-service-content p {
-    line-height: 1.7;
-    color: #444;
-}
-
-.tris-link {
-    color: #4ade80; /* TRI-S Green */
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-    .tris-row { margin-bottom: 40px; }
-    .tris-service-img { height: 250px; }
-    .tris-col { padding: 15px 0; }
+    .trust-item { flex: 0 0 100%; }
 }
