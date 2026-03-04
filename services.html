@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Full-width photo section styles */
+        /* Service Page Specific Enhancements */
         .photo-strip-container {
             display: flex;
             width: 100%;
@@ -30,6 +30,7 @@
         .photo-strip-item img {
             width: 100%;
             height: 100%;
+            border: 2px solid #fff;
             object-fit: cover;
             display: block;
         }
@@ -43,16 +44,27 @@
             text-decoration: none;
         }
         .bottom-cta {
-            background: var(--tris-blue, #004085);
+            background: #002b55;
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
+            margin-top: 60px;
         }
-        /* Mobile optimization */
+        
+        /* Ensure the images on this page match the Home page sizing */
+        .service-page-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
         @media (max-width: 767px) {
             .photo-strip-container { flex-wrap: wrap; }
             .photo-strip-item { flex: 0 0 50%; height: 200px; }
-            .service-col { margin-bottom: 40px; }
+            .service-page-img { height: 280px; margin-bottom: 20px; }
+            .tris-row-reverse { flex-direction: column !important; } /* Stack correctly on mobile */
         }
     </style>
 </head>
@@ -60,18 +72,19 @@
 
     <div id="header-placeholder"></div>
 
-    <section class="page-title-bg" style="background: linear-gradient(rgba(0, 64, 133, 0.85), rgba(0, 64, 133, 0.85)), url('images/tri-s-home-page-hero.jpg') no-repeat center center/cover; padding: 100px 0; color: white; text-align: center;">
+    <section class="page-title-bg" style="background: linear-gradient(rgba(0, 43, 85, 0.85), rgba(0, 43, 85, 0.85)), url('images/tri-s-home-page-hero.jpg') no-repeat center center/cover; padding: 100px 0; color: white; text-align: center;">
         <div class="container">
             <h1 style="font-size: 3.5rem; margin-bottom: 10px; color: #ffffff;">Our Environmental Services</h1>
             <p style="font-size: 1.4rem; opacity: 0.9;">Professional Waste Management & Industrial Solutions Since 1999</p>
-            <a href="contact.html" class="btn-tris btn-green hero-btn">Contact Us</a>
+            <a href="contact.html" class="btn-tris btn-green hero-btn">Get A Project Quote</a>
         </div>
     </section>
 
     <section class="services-detail-section" style="padding: 80px 0 0 0;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 service-col">
+            
+            <div class="tris-row">
+                <div class="tris-col">
                     <div id="hazardous-waste">
                         <h2 class="section-header">Hazardous & Industrial Waste Management</h2>
                         <p>TRI-S Environmental provides turnkey solutions for the identification, transportation, and disposal of hazardous and non-hazardous waste streams. We specialize in helping facilities remain in full compliance with state and federal EPA regulations.</p>
@@ -87,7 +100,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 service-col">
+                <div class="tris-col">
+                    <img src="images/tri-s-project.jpg" alt="TRI-S Industrial hazardous waste disposal project" class="service-page-img">
+                </div>
+            </div>
+
+            <div class="tris-row tris-row-reverse">
+                <div class="tris-col">
                     <div id="emergency-response">
                         <h2 class="section-header" style="color: #cc0000; border-bottom-color: #cc0000;">Emergency Spill Response</h2>
                         <p>When an environmental incident occurs, speed is critical. Our OSHA HAZWOPER certified emergency response teams are on call 24 hours a day to manage oil, fuel, and chemical spills on land or water.</p>
@@ -98,29 +117,25 @@
                             <li>Contaminated debris removal</li>
                             <li>Site restoration & testing</li>
                         </ul>
+                        <a href="tel:8608752110" class="btn-tris btn-green" style="background:#cc0000; margin-top:15px;">Call Emergency Line</a>
                     </div>
+                </div>
+                <div class="tris-col">
+                    <img src="images/tri-s-worker.jpg" alt="TRI-S Emergency spill response technician" class="service-page-img">
                 </div>
             </div>
         </div>
 
         <div class="photo-strip-container">
-            <div class="photo-strip-item">
-                <img src="images/tri-s-dump truck.jpg" alt="TRI-S Industrial waste transportation truck Ellington CT">
-            </div>
-            <div class="photo-strip-item">
-                <img src="images/tri-s-project.jpg" alt="TRI-S Environmental site remediation project in progress">
-            </div>
-            <div class="photo-strip-item">
-                <img src="images/tri-s-project-2.jpg" alt="Hazardous waste container management and site cleanup">
-            </div>
-            <div class="photo-strip-item">
-                <img src="images/tri-s-worker.jpg" alt="Certified hazardous materials technician performing field services">
-            </div>
+            <div class="photo-strip-item"><img src="images/tri-s-dump truck.jpg" alt="TRI-S Waste Transport"></div>
+            <div class="photo-strip-item"><img src="images/tri-s-tanker.JPG" alt="TRI-S Vacuum Tanker"></div>
+            <div class="photo-strip-item"><img src="images/tri-s-project-2.jpg" alt="TRI-S Site Cleanup"></div>
+            <div class="photo-strip-item"><img src="images/tri-s-truck.JPG" alt="TRI-S Service Fleet"></div>
         </div>
 
         <div class="container">
-            <div class="row" style="margin-bottom: 60px;">
-                <div class="col-md-6 service-col">
+            <div class="tris-row">
+                <div class="tris-col">
                     <div id="tank-services">
                         <h2 class="section-header">Tank Cleaning, Removal & Disposal</h2>
                         <p>We provide comprehensive maintenance and closure services for both Underground Storage Tanks (UST) and Aboveground Storage Tanks (AST).</p>
@@ -132,20 +147,16 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 service-col">
-                    <div id="lab-packs">
-                        <h2 class="section-header">Lab-Pack Services</h2>
-                        <p>The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists categorize, package, and manifest expired chemicals for schools, hospitals, and laboratories, ensuring DOT and EPA protocol compliance.</p>
-                    </div>
+                <div class="tris-col">
+                    <img src="images/tri-s-tank-removal.jpg" alt="TRI-S Underground storage tank removal" class="service-page-img">
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-md-12">
-                    <div id="transportation" style="margin-bottom: 60px; padding-top: 20px; border-top: 1px solid #eee;">
-                        <h2 class="section-header">Transportation & Container Logistics</h2>
-                        <p>Via our sister company, <a href="https://www.tri-strucking.com/" target="_blank">Tri-S Trucking</a>, we offer a dedicated fleet of licensed hazardous waste haulers. We provide the infrastructure to store waste safely onsite.</p>
-                        <p><strong>Container Provisioning:</strong> Drums, CBYs, Totes, and Bulk storage solutions.</p>
+                <div class="col-md-10 col-md-offset-1 text-center" style="margin-bottom: 80px; padding-top: 40px; border-top: 1px solid #eee;">
+                    <div id="lab-packs">
+                        <h2 class="section-header">Lab-Pack Services</h2>
+                        <p style="font-size: 1.2rem;">The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists categorize, package, and manifest expired chemicals for schools, hospitals, and laboratories, ensuring DOT and EPA protocol compliance.</p>
                     </div>
                 </div>
             </div>
@@ -153,8 +164,8 @@
 
         <section class="bottom-cta">
             <div class="container">
-                <h2 style="color: white; margin-top: 0;">Need a Quote?</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact our Ellington, CT office today for a customized waste management plan or site assessment.</p>
+                <h2 style="color: white; margin-top: 0;">Ready to start your project?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact our Ellington, CT office today for a customized waste management plan.</p>
                 <p style="font-size: 2.5rem; font-weight: bold; margin-bottom: 30px;">
                     <a href="tel:8608752110" style="color: white; text-decoration: none;">(860) 875-2110</a>
                 </p>
@@ -163,7 +174,7 @@
                         <a href="contact.html" class="btn-tris btn-green" style="display: block; padding: 15px; font-weight: bold;">Request Information</a>
                     </div>
                 </div>
-                <p style="margin-top: 30px; opacity: 0.8;"><strong>Service Area:</strong> CT, MA, RI, and NY</p>
+                <p style="margin-top: 30px; opacity: 0.8;"><strong>Serving:</strong> CT, MA, RI, and NY</p>
             </div>
         </section>
     </section>
