@@ -14,30 +14,34 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Custom styles for image consistency and professional layout */
-        .responsive-img-service {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .service-content-wrapper {
+        /* Full-width photo section styles */
+        .photo-strip-container {
             display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
+            width: 100%;
+            padding: 0;
+            margin: 40px 0;
+            overflow: hidden;
         }
-        /* Ensures images look good on mobile */
+        .photo-strip-item {
+            flex: 1;
+            height: 300px; /* Adjust height as needed */
+            padding: 0;
+        }
+        .photo-strip-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures images fill the space without distortion */
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        /* Mobile optimization for the photo strip */
         @media (max-width: 767px) {
-            .service-content-wrapper {
-                flex-direction: column !important;
-                text-align: center;
+            .photo-strip-container {
+                flex-wrap: wrap;
             }
-            .list-checks {
-                text-align: left;
-                display: inline-block;
+            .photo-strip-item {
+                flex: 0 0 50%; /* Shows 2x2 grid on mobile */
+                height: 200px;
             }
         }
     </style>
@@ -90,88 +94,41 @@
             <div class="row">
                 <div class="col-md-8">
                     
-                    <div id="hazardous-waste" class="service-content-wrapper" style="flex-direction: row-reverse;">
-                        <div class="service-text">
-                            <h2 class="section-header">Hazardous & Industrial Waste Management</h2>
-                            <p>TRI-S Environmental provides turnkey solutions for the identification, transportation, and disposal of hazardous and non-hazardous waste streams. We specialize in helping facilities remain in full compliance with state and federal EPA regulations while minimizing disposal costs.</p>
-                            <div style="background: #f9f9f9; padding: 25px; border-left: 5px solid var(--tris-green); margin: 25px 0;">
-                                <h4 style="margin-top: 0;">Specialized Waste Streams Managed:</h4>
-                                <ul class="list-checks">
-                                    <li>Flammable Solvents & Lab Reagents</li>
-                                    <li>Contaminated Soils (PCB, Lead, Petroleum)</li>
-                                    <li>Plating Sludges & Corrosive Liquids</li>
-                                    <li>Universal Waste (Batteries, Bulbs, Ballasts)</li>
-                                    <li>Non-Hazardous Industrial Byproducts</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="service-image">
-                            <img src="images/tri-s-worker.jpg" alt="Certified TRI-S Environmental technician handling hazardous waste disposal in Connecticut" class="responsive-img-service">
-                        </div>
-                    </div>
-
-                    <div id="emergency-response" class="service-content-wrapper" style="flex-direction: row; margin-bottom: 60px;">
-                        <div class="service-text">
-                            <h2 class="section-header" style="color: #cc0000; border-bottom-color: #cc0000;">Emergency Spill Response</h2>
-                            <p>When an environmental incident occurs, speed is critical to containing liability. Our OSHA HAZWOPER certified emergency response teams are on call 24 hours a day to manage oil, fuel, and chemical spills on land or water.</p>
-                            <p><strong>Our Response Capabilities Include:</strong></p>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul style="padding-left: 20px;">
-                                        <li>Over-the-road truck spills</li>
-                                        <li>Hydraulic line failures</li>
-                                        <li>Facility tank overfills</li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul style="padding-left: 20px;">
-                                        <li>Sorbent boom deployment</li>
-                                        <li>Contaminated debris removal</li>
-                                        <li>Site restoration & testing</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="service-image">
-                            <img src="images/tri-s-project.jpg" alt="24/7 Emergency spill response team managing environmental cleanup project" class="responsive-img-service">
-                        </div>
-                    </div>
-
-                    <div id="tank-services" class="service-content-wrapper" style="flex-direction: row-reverse; margin-bottom: 60px;">
-                        <div class="service-text">
-                            <h2 class="section-header">Tank Cleaning, Removal & Disposal</h2>
-                            <p>We provide comprehensive maintenance and closure services for both Underground Storage Tanks (UST) and Aboveground Storage Tanks (AST). Whether you are upgrading your facility or managing a property transfer, TRI-S ensures the process is safe and documented.</p>
+                    <div id="hazardous-waste" style="margin-bottom: 60px;">
+                        <h2 class="section-header">Hazardous & Industrial Waste Management</h2>
+                        <p>TRI-S Environmental provides turnkey solutions for the identification, transportation, and disposal of hazardous and non-hazardous waste streams. We specialize in helping facilities remain in full compliance with state and federal EPA regulations while minimizing disposal costs.</p>
+                        
+                        <div style="background: #f9f9f9; padding: 25px; border-left: 5px solid var(--tris-green); margin: 25px 0;">
+                            <h4 style="margin-top: 0;">Specialized Waste Streams Managed:</h4>
                             <ul class="list-checks">
-                                <li>Confined space entry for internal tank cleaning</li>
-                                <li>Removal and disposal of residual sludge and liquids</li>
-                                <li>Full tank decommissioning and structural removal</li>
-                                <li>Post-removal soil sampling and reporting</li>
+                                <li>Flammable Solvents & Lab Reagents</li>
+                                <li>Contaminated Soils (PCB, Lead, Petroleum)</li>
+                                <li>Plating Sludges & Corrosive Liquids</li>
+                                <li>Universal Waste (Batteries, Bulbs, Ballasts)</li>
+                                <li>Non-Hazardous Industrial Byproducts</li>
                             </ul>
                         </div>
-                        <div class="service-image">
-                            <img src="images/tri-s-project-2.jpg" alt="Underground storage tank removal and site remediation services in CT" class="responsive-img-service">
-                        </div>
                     </div>
 
-                    <div id="lab-packs" style="margin-bottom: 60px;">
-                        <h2 class="section-header">Lab-Pack Services</h2>
-                        <p>The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists and technicians categorize, package, and manifest expired or unneeded chemicals for schools, hospitals, and industrial laboratories, ensuring every item is handled according to DOT and EPA protocols.</p>
-                    </div>
-
-                    <div id="transportation" class="service-content-wrapper" style="flex-direction: row; margin-bottom: 60px;">
-                        <div class="service-text">
-                            <h2 class="section-header">Transportation & Container Logistics</h2>
-                            <p>Via our sister company, <a href="https://www.tri-strucking.com/" target="_blank">Tri-S Trucking</a>, we offer a dedicated fleet of licensed hazardous waste haulers. We don't just move waste; we provide the infrastructure to store it safely onsite.</p>
-                            <p><strong>Container Provisioning:</strong></p>
-                            <div class="row text-center" style="margin-top: 20px;">
-                                <div class="col-xs-3"><strong>Drums</strong></div>
-                                <div class="col-xs-3"><strong>CBYs</strong></div>
-                                <div class="col-xs-3"><strong>Totes</strong></div>
-                                <div class="col-xs-3"><strong>Bulk</strong></div>
+                    <div id="emergency-response" style="margin-bottom: 60px;">
+                        <h2 class="section-header" style="color: #cc0000; border-bottom-color: #cc0000;">Emergency Spill Response</h2>
+                        <p>When an environmental incident occurs, speed is critical to containing liability. Our OSHA HAZWOPER certified emergency response teams are on call 24 hours a day to manage oil, fuel, and chemical spills on land or water.</p>
+                        <p><strong>Our Response Capabilities Include:</strong></p>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <ul style="padding-left: 20px;">
+                                    <li>Over-the-road truck spills</li>
+                                    <li>Hydraulic line failures</li>
+                                    <li>Facility tank overfills</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="service-image">
-                            <img src="images/tri-s-dump truck.jpg" alt="TRI-S Trucking hazardous waste transportation vehicle for industrial hauling" class="responsive-img-service">
+                            <div class="col-sm-6">
+                                <ul style="padding-left: 20px;">
+                                    <li>Sorbent boom deployment</li>
+                                    <li>Contaminated debris removal</li>
+                                    <li>Site restoration & testing</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -190,6 +147,55 @@
                         <div style="margin-top: 30px; font-size: 13px; opacity: 0.8;">
                             <p><strong>Service Area:</strong><br>
                             Connecticut, Massachusetts, Rhode Island, and New York.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="photo-strip-container">
+            <div class="photo-strip-item">
+                <img src="images/tri-s-dump truck.jpg" alt="TRI-S Industrial waste transportation truck Ellington CT">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/tri-s-project.jpg" alt="TRI-S Environmental site remediation project in progress">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/tri-s-project-2.jpg" alt="Hazardous waste container management and site cleanup">
+            </div>
+            <div class="photo-strip-item">
+                <img src="images/tri-s-worker.jpg" alt="Certified hazardous materials technician performing field services">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="tank-services" style="margin-bottom: 60px;">
+                        <h2 class="section-header">Tank Cleaning, Removal & Disposal</h2>
+                        <p>We provide comprehensive maintenance and closure services for both Underground Storage Tanks (UST) and Aboveground Storage Tanks (AST). Whether you are upgrading your facility or managing a property transfer, TRI-S ensures the process is safe and documented.</p>
+                        <ul class="list-checks">
+                            <li>Confined space entry for internal tank cleaning</li>
+                            <li>Removal and disposal of residual sludge and liquids</li>
+                            <li>Full tank decommissioning and structural removal</li>
+                            <li>Post-removal soil sampling and reporting</li>
+                        </ul>
+                    </div>
+
+                    <div id="lab-packs" style="margin-bottom: 60px;">
+                        <h2 class="section-header">Lab-Pack Services</h2>
+                        <p>The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists and technicians categorize, package, and manifest expired or unneeded chemicals for schools, hospitals, and industrial laboratories, ensuring every item is handled according to DOT and EPA protocols.</p>
+                    </div>
+
+                    <div id="transportation" style="margin-bottom: 60px;">
+                        <h2 class="section-header">Transportation & Container Logistics</h2>
+                        <p>Via our sister company, <a href="https://www.tri-strucking.com/" target="_blank">Tri-S Trucking</a>, we offer a dedicated fleet of licensed hazardous waste haulers. We don't just move waste; we provide the infrastructure to store it safely onsite.</p>
+                        <p><strong>Container Provisioning:</strong></p>
+                        <div class="row text-center" style="margin-top: 20px;">
+                            <div class="col-xs-3"><strong>Drums</strong></div>
+                            <div class="col-xs-3"><strong>CBYs</strong></div>
+                            <div class="col-xs-3"><strong>Totes</strong></div>
+                            <div class="col-xs-3"><strong>Bulk</strong></div>
                         </div>
                     </div>
                 </div>
