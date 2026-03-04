@@ -22,22 +22,42 @@
         }
         .container-hero h1, .container-hero p { color: white; }
 
+        /* IMAGE SIZE RESTRICTIONS */
+        .spec-img-standard {
+            width: 100%;
+            max-height: 250px; /* Limits the height so it doesn't push content too far down */
+            object-fit: cover; /* Crops the image to fit the box without stretching */
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .section-side-img {
+            width: 100%;
+            max-height: 350px; /* Limits size for images next to text blocks */
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         .spec-card {
             border: 1px solid #eee;
-            padding: 30px;
+            padding: 20px;
             margin-bottom: 30px;
             border-top: 4px solid var(--tris-blue);
             transition: 0.3s;
             background: #fff;
+            height: 100%; /* Ensures all cards in a row match height */
         }
         .spec-card:hover {
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             border-top-color: var(--tris-green);
         }
-        .spec-icon {
-            font-size: 2.5rem;
+        .spec-icon-label {
+            font-size: 1.5rem;
+            font-weight: bold;
             color: var(--tris-green);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            display: block;
         }
         .compliance-bar {
             background: #f8f9fa;
@@ -58,12 +78,12 @@
         </div>
     </section>
 
-    <section style="padding: 80px 0 40px;">
+    <section style="padding: 60px 0 40px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
                     <h2 class="section-header">Flexible Storage & Transport</h2>
-                    <p style="font-size: 1.2rem;">Whether your hazardous waste materials are <strong>dry or wet</strong>, TRI-S Environmental provides the proper containment to meet your facility’s space and safety requirements. Our team manages the entire lifecycle—from providing the containers to preparing the legal transport manifest.</p>
+                    <p style="font-size: 1.1rem;">Whether your hazardous waste materials are <strong>dry or wet</strong>, TRI-S Environmental provides the proper containment to meet your facility’s space and safety requirements. Our team manages the entire lifecycle—from providing the containers to preparing the legal transport manifest.</p>
                 </div>
             </div>
         </div>
@@ -71,35 +91,29 @@
 
     <section style="padding: 20px 0 60px;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+            <div class="row display-flex"> <div class="col-md-4">
                     <div class="spec-card text-center">
-                        <div class="spec-icon">Drums</div>
+                        <img src="images/tri-s-project-2.jpg" alt="Hazardous Waste Drums" class="spec-img-standard">
+                        <span class="spec-icon-label">Drums</span>
                         <h4>55-Gallon & Specialized</h4>
                         <p>Available in steel, poly, or fiber for liquids and solids. We also accommodate smaller overpack drums and salvage drums for leaking containers.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="spec-card text-center">
-                        <div class="spec-icon">CBYs</div>
+                        <img src="images/tri-s-project.jpg" alt="Cubic Yard Boxes" class="spec-img-standard">
+                        <span class="spec-icon-label">CBYs</span>
                         <h4>Cubic Yard Boxes</h4>
                         <p>The industry standard for bulk dry materials, contaminated PPE, and debris. These "Tri-Wall" boxes are sturdy and easily stackable.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="spec-card text-center">
-                        <div class="spec-icon">Totes</div>
+                        <img src="images/tri-s-worker.jpg" alt="IBC Totes" class="spec-img-standard">
+                        <span class="spec-icon-label">Totes</span>
                         <h4>IBC Totes (275/330 Gal)</h4>
                         <p>Intermediate Bulk Containers (IBC) are ideal for large volumes of liquid waste, providing a more efficient footprint than multiple drums.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <p class="lead" style="margin-top: 20px;">
-                        <strong>Need something else?</strong> We also provide specialized containment for <strong>Universal Waste</strong>, compressed gases, and all other hazardous hazard classes.
-                    </p>
                 </div>
             </div>
         </div>
@@ -118,13 +132,13 @@
                     </ul>
                 </div>
                 <div class="tris-col">
-                    <img src="images/tri-s-project.jpg" alt="TRI-S professional waste manifest and documentation service" class="service-page-img">
+                    <img src="images/tri-s-dump truck.jpg" alt="TRI-S professional waste documentation" class="section-side-img">
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="padding: 80px 0; text-align: center;">
+    <section style="padding: 60px 0; text-align: center;">
         <div class="container">
             <h2>The Right Solution for Your Waste Streams</h2>
             <p>TRI-S has the expertise and the inventory to meet your facility's needs.</p>
