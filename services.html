@@ -19,135 +19,85 @@
             display: flex;
             width: 100%;
             padding: 0;
-            margin: 40px 0;
+            margin: 60px 0;
             overflow: hidden;
         }
         .photo-strip-item {
             flex: 1;
-            height: 300px; /* Adjust height as needed */
+            height: 300px;
             padding: 0;
         }
         .photo-strip-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures images fill the space without distortion */
+            object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
         }
-        /* Mobile optimization for the photo strip */
+        .hero-btn {
+            margin-top: 25px;
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .bottom-cta {
+            background: var(--tris-blue, #004085);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        /* Mobile optimization */
         @media (max-width: 767px) {
-            .photo-strip-container {
-                flex-wrap: wrap;
-            }
-            .photo-strip-item {
-                flex: 0 0 50%; /* Shows 2x2 grid on mobile */
-                height: 200px;
-            }
+            .photo-strip-container { flex-wrap: wrap; }
+            .photo-strip-item { flex: 0 0 50%; height: 200px; }
+            .service-col { margin-bottom: 40px; }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Environmental Remediation and Waste Management",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "TRI-S Environmental & Industrial Services",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "P.O. Box 547",
-          "addressLocality": "Ellington",
-          "addressRegion": "CT",
-          "postalCode": "06029"
-        },
-        "telephone": "+18608752110"
-      },
-      "areaServed": ["CT", "MA", "NY", "RI"],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Environmental Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hazardous Waste Transportation" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Spill Response" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tank Cleaning & Removal" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lab-Pack Services" }},
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Container Management" }}
-        ]
-      }
-    }
-    </script>
 </head>
 <body>
 
     <div id="header-placeholder"></div>
 
-    <section class="page-title-bg" style="background: linear-gradient(rgba(0, 64, 133, 0.85), rgba(0, 64, 133, 0.85)), url('images/tri-s-home-page-hero.jpg') no-repeat center center/cover; padding: 60px 0; color: white; text-align: center;">
+    <section class="page-title-bg" style="background: linear-gradient(rgba(0, 64, 133, 0.85), rgba(0, 64, 133, 0.85)), url('images/tri-s-home-page-hero.jpg') no-repeat center center/cover; padding: 100px 0; color: white; text-align: center;">
         <div class="container">
-            <h1 style="font-size: 3rem; margin-bottom: 10px; color: #ffffff;">Our Environmental Services</h1>
-            <p style="font-size: 1.2rem; opacity: 0.9;">Professional Waste Management & Industrial Solutions Since 1999</p>
+            <h1 style="font-size: 3.5rem; margin-bottom: 10px; color: #ffffff;">Our Environmental Services</h1>
+            <p style="font-size: 1.4rem; opacity: 0.9;">Professional Waste Management & Industrial Solutions Since 1999</p>
+            <a href="contact.html" class="btn-tris btn-green hero-btn">Contact Us</a>
         </div>
     </section>
 
-    <section class="services-detail-section" style="padding: 80px 0;">
+    <section class="services-detail-section" style="padding: 80px 0 0 0;">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    
-                    <div id="hazardous-waste" style="margin-bottom: 60px;">
+                <div class="col-md-6 service-col">
+                    <div id="hazardous-waste">
                         <h2 class="section-header">Hazardous & Industrial Waste Management</h2>
-                        <p>TRI-S Environmental provides turnkey solutions for the identification, transportation, and disposal of hazardous and non-hazardous waste streams. We specialize in helping facilities remain in full compliance with state and federal EPA regulations while minimizing disposal costs.</p>
+                        <p>TRI-S Environmental provides turnkey solutions for the identification, transportation, and disposal of hazardous and non-hazardous waste streams. We specialize in helping facilities remain in full compliance with state and federal EPA regulations.</p>
                         
-                        <div style="background: #f9f9f9; padding: 25px; border-left: 5px solid var(--tris-green); margin: 25px 0;">
-                            <h4 style="margin-top: 0;">Specialized Waste Streams Managed:</h4>
-                            <ul class="list-checks">
+                        <div style="background: #f9f9f9; padding: 20px; border-left: 5px solid var(--tris-green); margin: 20px 0;">
+                            <h4 style="margin-top: 0;">Specialized Waste Managed:</h4>
+                            <ul class="list-checks" style="font-size: 14px;">
                                 <li>Flammable Solvents & Lab Reagents</li>
                                 <li>Contaminated Soils (PCB, Lead, Petroleum)</li>
                                 <li>Plating Sludges & Corrosive Liquids</li>
-                                <li>Universal Waste (Batteries, Bulbs, Ballasts)</li>
-                                <li>Non-Hazardous Industrial Byproducts</li>
+                                <li>Universal Waste & Industrial Byproducts</li>
                             </ul>
                         </div>
                     </div>
-
-                    <div id="emergency-response" style="margin-bottom: 60px;">
-                        <h2 class="section-header" style="color: #cc0000; border-bottom-color: #cc0000;">Emergency Spill Response</h2>
-                        <p>When an environmental incident occurs, speed is critical to containing liability. Our OSHA HAZWOPER certified emergency response teams are on call 24 hours a day to manage oil, fuel, and chemical spills on land or water.</p>
-                        <p><strong>Our Response Capabilities Include:</strong></p>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <ul style="padding-left: 20px;">
-                                    <li>Over-the-road truck spills</li>
-                                    <li>Hydraulic line failures</li>
-                                    <li>Facility tank overfills</li>
-                                </ul>
-                            </div>
-                            <div class="col-sm-6">
-                                <ul style="padding-left: 20px;">
-                                    <li>Sorbent boom deployment</li>
-                                    <li>Contaminated debris removal</li>
-                                    <li>Site restoration & testing</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-
-                <div class="col-md-4">
-                    <div style="position: sticky; top: 20px; background: var(--tris-blue); color: white; padding: 30px; border-radius: 4px;">
-                        <h3 style="color: white; margin-top: 0;">Need a Quote?</h3>
-                        <p>Contact our Ellington, CT office today for a customized waste management plan or site assessment.</p>
-                        <hr style="border-color: rgba(255,255,255,0.2);">
-                        <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 20px;">
-                            <a href="tel:8608752110" style="color: white; text-decoration: none;">(860) 875-2110</a>
-                        </p>
-                        <a href="contact.html" class="btn-tris btn-green" style="display: block; text-align: center;">Request Information</a>
-                        
-                        <div style="margin-top: 30px; font-size: 13px; opacity: 0.8;">
-                            <p><strong>Service Area:</strong><br>
-                            Connecticut, Massachusetts, Rhode Island, and New York.</p>
-                        </div>
+                <div class="col-md-6 service-col">
+                    <div id="emergency-response">
+                        <h2 class="section-header" style="color: #cc0000; border-bottom-color: #cc0000;">Emergency Spill Response</h2>
+                        <p>When an environmental incident occurs, speed is critical. Our OSHA HAZWOPER certified emergency response teams are on call 24 hours a day to manage oil, fuel, and chemical spills on land or water.</p>
+                        <p><strong>Our Response Capabilities:</strong></p>
+                        <ul style="padding-left: 20px;">
+                            <li>Over-the-road truck spills & Hydraulic failures</li>
+                            <li>Facility tank overfills & Sorbent boom deployment</li>
+                            <li>Contaminated debris removal</li>
+                            <li>Site restoration & testing</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -169,38 +119,53 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div id="tank-services" style="margin-bottom: 60px;">
+            <div class="row" style="margin-bottom: 60px;">
+                <div class="col-md-6 service-col">
+                    <div id="tank-services">
                         <h2 class="section-header">Tank Cleaning, Removal & Disposal</h2>
-                        <p>We provide comprehensive maintenance and closure services for both Underground Storage Tanks (UST) and Aboveground Storage Tanks (AST). Whether you are upgrading your facility or managing a property transfer, TRI-S ensures the process is safe and documented.</p>
+                        <p>We provide comprehensive maintenance and closure services for both Underground Storage Tanks (UST) and Aboveground Storage Tanks (AST).</p>
                         <ul class="list-checks">
-                            <li>Confined space entry for internal tank cleaning</li>
-                            <li>Removal and disposal of residual sludge and liquids</li>
-                            <li>Full tank decommissioning and structural removal</li>
-                            <li>Post-removal soil sampling and reporting</li>
+                            <li>Confined space entry for cleaning</li>
+                            <li>Sludge and liquid removal</li>
+                            <li>Full decommissioning & structural removal</li>
+                            <li>Post-removal soil sampling</li>
                         </ul>
                     </div>
-
-                    <div id="lab-packs" style="margin-bottom: 60px;">
+                </div>
+                <div class="col-md-6 service-col">
+                    <div id="lab-packs">
                         <h2 class="section-header">Lab-Pack Services</h2>
-                        <p>The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists and technicians categorize, package, and manifest expired or unneeded chemicals for schools, hospitals, and industrial laboratories, ensuring every item is handled according to DOT and EPA protocols.</p>
+                        <p>The disposal of small-quantity, diverse chemicals requires high technical expertise. Our chemists categorize, package, and manifest expired chemicals for schools, hospitals, and laboratories, ensuring DOT and EPA protocol compliance.</p>
                     </div>
+                </div>
+            </div>
 
-                    <div id="transportation" style="margin-bottom: 60px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="transportation" style="margin-bottom: 60px; padding-top: 20px; border-top: 1px solid #eee;">
                         <h2 class="section-header">Transportation & Container Logistics</h2>
-                        <p>Via our sister company, <a href="https://www.tri-strucking.com/" target="_blank">Tri-S Trucking</a>, we offer a dedicated fleet of licensed hazardous waste haulers. We don't just move waste; we provide the infrastructure to store it safely onsite.</p>
-                        <p><strong>Container Provisioning:</strong></p>
-                        <div class="row text-center" style="margin-top: 20px;">
-                            <div class="col-xs-3"><strong>Drums</strong></div>
-                            <div class="col-xs-3"><strong>CBYs</strong></div>
-                            <div class="col-xs-3"><strong>Totes</strong></div>
-                            <div class="col-xs-3"><strong>Bulk</strong></div>
-                        </div>
+                        <p>Via our sister company, <a href="https://www.tri-strucking.com/" target="_blank">Tri-S Trucking</a>, we offer a dedicated fleet of licensed hazardous waste haulers. We provide the infrastructure to store waste safely onsite.</p>
+                        <p><strong>Container Provisioning:</strong> Drums, CBYs, Totes, and Bulk storage solutions.</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <section class="bottom-cta">
+            <div class="container">
+                <h2 style="color: white; margin-top: 0;">Need a Quote?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact our Ellington, CT office today for a customized waste management plan or site assessment.</p>
+                <p style="font-size: 2.5rem; font-weight: bold; margin-bottom: 30px;">
+                    <a href="tel:8608752110" style="color: white; text-decoration: none;">(860) 875-2110</a>
+                </p>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <a href="contact.html" class="btn-tris btn-green" style="display: block; padding: 15px; font-weight: bold;">Request Information</a>
+                    </div>
+                </div>
+                <p style="margin-top: 30px; opacity: 0.8;"><strong>Service Area:</strong> CT, MA, RI, and NY</p>
+            </div>
+        </section>
     </section>
 
     <div id="footer-placeholder"></div>
