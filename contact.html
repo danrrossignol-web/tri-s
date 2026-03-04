@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact TRI-S Environmental | Emergency Spill Response & Waste Services</title>
+    <meta name="description" content="Contact TRI-S Environmental for hazardous waste disposal, tank removal, and emergency spill response in CT, MA, and NY.">
+    <link rel="icon" type="image/png" href="images/Tri-S Favicon.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .contact-hero {
+            background: linear-gradient(rgba(0,43,85,0.85), rgba(0,43,85,0.85)), url('images/tri-s-truck.JPG') no-repeat center 25%/cover;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+        .contact-hero h1, .contact-hero p { color: white; }
+        
+        .contact-info-card {
+            background: #002b55;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            height: 100%;
+        }
+        .form-control {
+            border-radius: 2px;
+            border: 1px solid #ccc;
+            padding: 12px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+        .emergency-banner {
+            background: #cc0000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Our Team</h1>
+            <p class="lead">Serving the Northeast Environmental Needs Since 1999</p>
+        </div>
+    </section>
+
+    <section style="padding: 60px 0;">
+        <div class="container">
+            
+            <div class="emergency-banner">
+                🚨 FOR EMERGENCY SPILL RESPONSE: CALL <a href="tel:8608752110" style="color: white; text-decoration: underline;">(860) 875-2110</a>
+            </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="section-header">Request a Quote</h2>
+                    <p>Please fill out the form below and an environmental specialist will contact you shortly.</p>
+                    
+                    <form action="https://formspree.io/f/dan@rivereastbusiness.com" method="POST">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Full Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Email Address</label>
+                                <input type="email" name="_replyto" class="form-control" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <label>Company Name</label>
+                                <input type="text" name="company" class="form-control" placeholder="Company Ltd.">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Service Needed</label>
+                                <select name="service" class="form-control" required>
+                                    <option value="">Select Service...</option>
+                                    <option value="Hazardous Waste">Hazardous Waste Disposal</option>
+                                    <option value="Emergency Response">Emergency Spill Response</option>
+                                    <option value="Tank Cleaning">Tank Cleaning/Removal</option>
+                                    <option value="Lab Pack">Lab-Pack Services</option>
+                                    <option value="Asbestos">Asbestos Transportation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label>Message / Project Details</label>
+                        <textarea name="message" class="form-control" rows="6" placeholder="Please describe the type of waste, volume, and site location..." required></textarea>
+                        
+                        <input type="text" name="_gotcha" style="display:none" />
+
+                        <button type="submit" class="btn-tris btn-green" style="width: 100%; padding: 15px; font-weight: bold; font-size: 1.1rem;">Submit Request</button>
+                    </form>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="contact-info-card">
+                        <h3>Office Info</h3>
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+                        
+                        <p><strong>Address:</strong><br>
+                        25 Pinney Street<br>
+                        Ellington, CT 06029</p>
+
+                        <p><strong>Phone:</strong><br>
+                        <a href="tel:8608752110" style="color: white; font-size: 1.4rem;">(860) 875-2110</a></p>
+
+                        <p><strong>Hours:</strong><br>
+                        Office: Monday - Friday, 8:00 AM - 5:00 PM</p>
+
+                        <hr style="border-color: rgba(255,255,255,0.2);">
+                        <h4>Service Footprint</h4>
+                        <p>Providing environmental and industrial services throughout <strong>Connecticut, Massachusetts, New York, and Rhode Island.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.472740924976!2d-72.46668868455883!3d41.89065697922119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e6f987f4c5685b%3A0xc49d06859708709a!2s25%20Pinney%20St%2C%20Ellington%2C%20CT%2006029!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $("#header-placeholder").load("header-component.html");
+            $("#footer-placeholder").load("footer-component.html");
+        });
+    </script>
+</body>
+</html>
