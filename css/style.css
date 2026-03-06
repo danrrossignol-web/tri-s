@@ -280,23 +280,66 @@ h1, h2, h3 { color: var(--tris-blue); text-transform: uppercase; font-weight: bo
 
 /* --- MOBILE & RESPONSIVE --- */
 @media (max-width: 992px) {
-    .header-flex { flex-direction: column; gap: 20px; text-align: center; }
-    .main-nav ul.nav-menu { gap: 15px; flex-wrap: wrap; justify-content: center; }
-    .compact-grid { grid-template-columns: repeat(2, 1fr); }
+    .main-header {
+        /* Extra bottom padding to ensure absolute positioned sub-text isn't cut off */
+        padding: 10px 0 35px 0; 
+    }
+
+    .header-flex { 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: center; 
+    }
+
+    .main-nav ul.nav-menu { 
+        gap: 15px; 
+        /* row-gap ensures that if the menu wraps, the top row's sub-text doesn't hit the bottom row */
+        row-gap: 35px; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+
+    .compact-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-banner { padding: 80px 0; }
-    .hero-banner h1 { font-size: 30px; }
-    .trust-item { flex: 0 0 50%; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .trust-item:after { display: none; } /* Remove dividers on mobile */
-    .tris-row { margin-bottom: 40px; }
-    .tris-service-img { height: 280px; }
+    .hero-banner { 
+        padding: 80px 0; 
+    }
+    
+    .hero-banner h1 { 
+        font-size: 30px; 
+    }
+    
+    .trust-item { 
+        flex: 0 0 50%; 
+        border-bottom: 1px solid rgba(255,255,255,0.1); 
+    }
+    
+    .trust-item:after { 
+        display: none; 
+    } /* Remove dividers on mobile */
+    
+    .tris-row { 
+        margin-bottom: 40px; 
+    }
+    
+    .tris-service-img { 
+        height: 280px; 
+    }
 }
 
 @media (max-width: 576px) {
-    .compact-grid { grid-template-columns: 1fr; }
-    .trust-item { flex: 0 0 100%; }
+    .compact-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .trust-item { 
+        flex: 0 0 100%; 
+    }
+}
 }
 
 #cookie-banner {
